@@ -1,81 +1,695 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Yu Guan (管羽) - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yu Guan (管羽) — Undergraduate at Tsinghua EE. Research on humanoid motion tracking, Vision-Language-Action models, and World Action Models.">
+  <meta name="author" content="Yu Guan">
+  <meta name="keywords" content="Yu Guan, 管羽, Tsinghua, Humanoid Robot, Motion Tracking, Embodied AI, VLA, World Action Models, LIMMT, Humanoid-GPT">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Yu Guan (管羽) | Tsinghua EE">
+  <meta property="og:description" content="Undergraduate researcher in humanoid motion tracking, VLA, and World Action Models at Tsinghua University.">
+  <meta property="og:url" content="https://giraffeguan.github.io/guanyu.github.io/">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Yu Guan (管羽) | Tsinghua EE">
+  <meta name="twitter:description" content="Undergraduate researcher in humanoid motion tracking, VLA, and World Action Models at Tsinghua University.">
+
+  <link rel="canonical" href="https://giraffeguan.github.io/guanyu.github.io/">
+
+  <title>Yu Guan (管羽) | Tsinghua EE — Humanoid Robotics &amp; VLA</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦒</text></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yu Guan",
+    "alternateName": ["管羽", "Guan Yu"],
+    "url": "https://giraffeguan.github.io/guanyu.github.io/",
+    "image": "https://giraffeguan.github.io/guanyu.github.io/",
+    "jobTitle": "Undergraduate Research Assistant",
+    "description": "Undergraduate researcher at Tsinghua University, focusing on humanoid motion tracking, Vision-Language-Action (VLA) models, and World Action Models.",
+    "email": "mailto:rainguan467@gmail.com",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Tsinghua University",
+      "sameAs": "https://www.tsinghua.edu.cn/en/"
+    },
+    "affiliation": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Tsinghua University, Department of Electronic Engineering"
+      },
+      {
+        "@type": "Organization",
+        "name": "Beijing Galbot Co., Ltd.",
+        "url": "https://www.galbot.com/"
+      }
+    ],
+    "knowsAbout": [
+      "Humanoid Robotics",
+      "Motion Tracking",
+      "Vision-Language-Action Models",
+      "World Action Models",
+      "Embodied AI",
+      "Reinforcement Learning"
+    ],
+    "sameAs": [
+      "https://github.com/GiraffeGuan"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 2rem; color: #333; }
-    h1, h2, h3 { color: #222; margin-top: 1.5rem; }
-    .header { display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 1px solid #eaeaea; padding-bottom: 1.5rem; margin-bottom: 2rem; }
-    .bio-text { flex: 1; padding-right: 2rem; }
-    .bio-text p { margin-bottom: 1rem; text-align: justify; }
-    .profile-pic { width: 220px; border-radius: 8px; }
-    a { color: #0056b3; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .news-list, .pub-list { list-style-type: none; padding-left: 0; }
-    .news-list li { margin-bottom: 0.5rem; }
-    .pub-item { margin-bottom: 1.5rem; }
-    .pub-title { font-weight: bold; font-size: 1.1em; color: #222; }
-    .pub-authors { color: #555; }
-    .pub-venue { font-style: italic; color: #777; }
+    :root {
+      --bg: #ffffff;
+      --bg-elev: #fafafa;
+      --bg-card: #ffffff;
+      --border: #e5e7eb;
+      --text: #1f2937;
+      --text-soft: #4b5563;
+      --text-mute: #6b7280;
+      --accent: #0d9488;
+      --accent-soft: #ccfbf1;
+      --shadow: 0 1px 3px rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-hover: 0 10px 25px rgba(0,0,0,.08), 0 4px 10px rgba(0,0,0,.04);
+      --radius: 14px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1116;
+      --bg-elev: #111820;
+      --bg-card: #131c25;
+      --border: #1f2a36;
+      --text: #e5e7eb;
+      --text-soft: #cbd5e1;
+      --text-mute: #94a3b8;
+      --accent: #2dd4bf;
+      --accent-soft: #134e4a;
+      --shadow: 0 1px 3px rgba(0,0,0,.4), 0 1px 2px rgba(0,0,0,.3);
+      --shadow-hover: 0 10px 25px rgba(0,0,0,.5), 0 4px 10px rgba(0,0,0,.3);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color .3s ease, color .3s ease;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity .15s ease;
+    }
+    a:hover { opacity: .75; text-decoration: underline; }
+
+    /* ==== Top bar ==== */
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1rem;
+    }
+    .theme-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-soft);
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: all .2s ease;
+    }
+    .theme-toggle:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: rotate(15deg);
+    }
+
+    /* ==== Header ==== */
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 2.5rem;
+      align-items: center;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .bio h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0 0 .5rem;
+      letter-spacing: -.02em;
+    }
+    .bio .subtitle {
+      color: var(--text-mute);
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+    .bio p {
+      color: var(--text-soft);
+      margin: .8rem 0;
+      font-size: .98rem;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-top: 1.25rem;
+    }
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .4rem .85rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .88rem;
+      color: var(--text-soft);
+      background: var(--bg-card);
+      transition: all .2s ease;
+    }
+    .links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 4.5rem;
+      font-weight: 700;
+      letter-spacing: -.05em;
+      box-shadow: var(--shadow);
+      user-select: none;
+    }
+
+    /* ==== Sections ==== */
+    section { margin-bottom: 3rem; }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 1.25rem;
+      letter-spacing: -.01em;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    h2::before {
+      content: "";
+      width: 4px; height: 22px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* ==== News ==== */
+    .news {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      max-height: 240px;
+      overflow-y: auto;
+      box-shadow: var(--shadow);
+    }
+    .news ul { list-style: none; padding: 0; margin: 0; }
+    .news li {
+      padding: .45rem 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: .94rem;
+      color: var(--text-soft);
+    }
+    .news li:last-child { border-bottom: none; }
+    .news .date {
+      display: inline-block;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .82rem;
+      font-weight: 600;
+      margin-right: .6rem;
+      min-width: 75px;
+    }
+
+    /* ==== Publications ==== */
+    .pub {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease;
+    }
+    .pub:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+    .pub-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .35rem;
+    }
+    .pub-authors {
+      color: var(--text-soft);
+      font-size: .92rem;
+      margin-bottom: .25rem;
+    }
+    .pub-authors .me { color: var(--text); font-weight: 600; }
+    .pub-venue {
+      font-style: italic;
+      color: var(--text-mute);
+      font-size: .9rem;
+      margin-bottom: .5rem;
+    }
+    .pub-tldr {
+      color: var(--text-soft);
+      font-size: .92rem;
+      margin: .35rem 0 .6rem;
+    }
+    .pub-links { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .pub-links a {
+      font-size: .8rem;
+      padding: .2rem .65rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-soft);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .pub-links a:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+    .badge {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 600;
+      padding: .15rem .55rem;
+      border-radius: 4px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-left: .5rem;
+      vertical-align: middle;
+      letter-spacing: .03em;
+    }
+
+    /* ==== Experience / Awards / Activities ==== */
+    .item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item .when {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: .85rem;
+      color: var(--text-mute);
+      padding-top: .15rem;
+    }
+    .item .what .role {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: .15rem;
+    }
+    .item .what .org {
+      color: var(--text-mute);
+      font-size: .9rem;
+      margin-bottom: .5rem;
+    }
+    .item .what ul {
+      margin: .4rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--text-soft);
+      font-size: .93rem;
+    }
+    .item .what ul li { margin-bottom: .25rem; }
+
+    /* ==== Skills tags ==== */
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .tag {
+      display: inline-block;
+      padding: .3rem .7rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: .85rem;
+      color: var(--text-soft);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
+      box-shadow: var(--shadow);
+    }
+    .panel h3 {
+      margin: 0 0 .65rem;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .panel ul { margin: 0; padding-left: 1.1rem; color: var(--text-soft); font-size: .92rem; }
+    .panel ul li { margin-bottom: .25rem; }
+
+    /* ==== Footer ==== */
+    footer {
+      text-align: center;
+      color: var(--text-mute);
+      font-size: .85rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ==== Responsive ==== */
+    @media (max-width: 720px) {
+      .container { padding: 1.5rem 1rem 3rem; }
+      .header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: center;
+      }
+      .avatar { width: 140px; height: 140px; font-size: 3rem; margin: 0 auto; order: -1; }
+      .links { justify-content: center; }
+      .item { grid-template-columns: 1fr; gap: .35rem; }
+      .item .when { font-size: .8rem; }
+      .two-col { grid-template-columns: 1fr; }
+      .bio h1 { font-size: 1.8rem; }
+    }
   </style>
 </head>
 <body>
+  <div class="container">
 
-  <div class="header">
-    <div class="bio-text">
-      <h1>Yu Guan (管羽)</h1>
-      <p>I am a undergraduate student at the Department of Electronic Engineering, Tsinghua University. I will graduate in 2027.</p>
-      <p>I am currently a research intern at GalBot, under the supervision of Prof. Li Yi and Prof. He Wang. I am recently interested in Humanoid Tracking, Humanoid-VLA, World Action Models and General Reward Models.</p>
-      <p>
-        <a href="rainguan467@gmail.com">Email</a> &nbsp;/&nbsp;
-        <a href="#">Google Scholar</a> &nbsp;/&nbsp;
-        <a href="#">GitHub</a> &nbsp;/&nbsp;
-        <a href="#">CV</a>
-      </p>
+    <div class="topbar">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
     </div>
-    <div>
-      <img src="https://via.placeholder.com/220" alt="Yu Guan" class="profile-pic">
-    </div>
+
+    <!-- ============== HEADER ============== -->
+    <header class="header">
+      <div class="bio">
+        <h1>Yu Guan <span style="color:var(--text-mute); font-weight:500;">(管羽)</span></h1>
+        <div class="subtitle">Undergraduate · Tsinghua EE · Class of 2027</div>
+
+        <p>
+          I am an undergraduate student in the Department of Electronic Engineering,
+          <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University</a>,
+          expected to graduate in 2027.
+        </p>
+        <p>
+          I am currently a research intern at <a href="https://www.galbot.com/" target="_blank" rel="noopener">Galbot</a>,
+          working with <a href="#" target="_blank" rel="noopener">Prof. Li Yi</a> and
+          <a href="#" target="_blank" rel="noopener">Prof. He Wang</a>.
+          My recent interests include <strong>Humanoid Tracking</strong>,
+          <strong>Humanoid-VLA</strong>, <strong>World Action Models</strong>,
+          and <strong>General Reward Models</strong>.
+        </p>
+
+        <div class="links">
+          <a href="mailto:rainguan467@gmail.com">✉ Email</a>
+          <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://github.com/GiraffeGuan" target="_blank" rel="noopener">GitHub</a>
+          <a href="assets/Yu_Guan_CV.pdf" target="_blank" rel="noopener">CV (EN)</a>
+          <a href="assets/管羽_CV.pdf" target="_blank" rel="noopener">CV (中文)</a>
+        </div>
+      </div>
+
+      <div class="avatar" aria-label="Yu Guan avatar placeholder">YG</div>
+    </header>
+
+    <!-- ============== NEWS ============== -->
+    <section id="news">
+      <h2>News</h2>
+      <div class="news">
+        <ul>
+          <li><span class="date">2026-05</span>One first-authored paper <em>LIMMT</em> accepted to <strong>ICML 2026</strong>.</li>
+          <li><span class="date">2026-04</span>One co-authored paper <em>HumanTracker</em> submitted to <strong>ECCV 2026</strong>.</li>
+          <li><span class="date">2026-02</span>One co-authored paper <em>Humanoid-GPT</em> accepted to <strong>CVPR 2026</strong>.</li>
+          <li><span class="date">2025-09</span>Joined Galbot &amp; Tsinghua IIIS as an Undergraduate Research Assistant.</li>
+          <li><span class="date">2025-07</span>Started a robotics engineering internship at BYD on dual-arm workstation robots.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============== PUBLICATIONS ============== -->
+    <section id="publications">
+      <h2>Publications &amp; Preprints</h2>
+      <p style="color:var(--text-mute); font-size:.88rem; margin:-.5rem 0 1rem;">* denotes equal contribution.</p>
+
+      <div class="pub">
+        <div class="pub-title">
+          LIMMT: Less is More for Motion Tracking
+          <span class="badge">ICML 2026</span>
+        </div>
+        <div class="pub-authors">
+          <span class="me">Yu Guan*</span>, Zekun Qi*, Chenghuai Lin, Xuchuan Chen, Wenyao Zhang,
+          Jilong Wang, XinQiang Yu, He Wang, Li Yi
+        </div>
+        <div class="pub-venue">International Conference on Machine Learning (ICML), 2026</div>
+        <div class="pub-tldr">
+          A "less is more" framework for humanoid motion tracking: empirically shows that models trained
+          on a small, carefully curated subset of motion data can outperform those trained on massive,
+          unfiltered corpora.
+        </div>
+        <div class="pub-links">
+          <a href="#" target="_blank" rel="noopener">arXiv (soon)</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          Humanoid-GPT: Humanoid Generative Pre-Training for Zero-Shot Motion Tracking
+          <span class="badge">CVPR 2026</span>
+        </div>
+        <div class="pub-authors">
+          Zekun Qi*, Xuchuan Chen*, Jilong Wang*, Chenghuai Lin*, Yunrui Lian, Zhikai Zhang,
+          <span class="me">Yu Guan</span>, Wenyao Zhang, Xinqiang Yu, He Wang, Li Yi
+        </div>
+        <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026</div>
+        <div class="pub-tldr">
+          A GPT-style Transformer with causal attention trained on a 2B-frame retargeted motion corpus,
+          enabling zero-shot whole-body control for the Unitree G1 humanoid.
+        </div>
+        <div class="pub-links">
+          <a href="https://qizekun.github.io/humanoid-gpt/" target="_blank" rel="noopener">Project Page</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          HumanTracker: Towards a Comprehensive and Human-Aligned Motion Tracking Benchmark
+          <span class="badge" style="background:#fef3c7; color:#92400e;">Under Review</span>
+        </div>
+        <div class="pub-authors">
+          Dairu Liu*, Zekun Qi*, Jiayu Zeng*, <span class="me">Yu Guan</span>, Chenghuai Lin,
+          Xuchuan Chen, XinQiang Yu, Wenyao Zhang, He Wang, Li Yi
+        </div>
+        <div class="pub-venue">European Conference on Computer Vision (ECCV), 2026 — Under Review</div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-title">
+          Vision To Touch: Generalizable Insertion Contact-State Representation with Real-World RL
+        </div>
+        <div class="pub-authors">
+          XinQiang Yu*, Yuxuan Wan, Zekun Qi, Weiheng Liu, Wenyao Zhang, Bowen Xiao,
+          <span class="me">Yu Guan</span>, Xuchuan Chen, Zhizheng Zhang, Li Yi, Zhaoxiang Zhang, He Wang
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== EXPERIENCE ============== -->
+    <section id="experience">
+      <h2>Research Experience</h2>
+
+      <div class="item">
+        <div class="when">Sept 2025 – Present</div>
+        <div class="what">
+          <div class="role">Undergraduate Research Assistant</div>
+          <div class="org">Institute for Interdisciplinary Information Sciences (IIIS), Tsinghua University · in collaboration with <a href="https://www.galbot.com/" target="_blank" rel="noopener">Beijing Galbot Co., Ltd.</a></div>
+          <ul>
+            <li>Conducting research on humanoid robotics — data processing pipelines, motion tracking, and Vision-Language-Action (VLA) models.</li>
+            <li>Led the primary experiments for <strong>LIMMT</strong> (Less is More for Motion Tracking) as the first author.</li>
+            <li>Currently exploring Egocentric (Ego-View) data processing and World Action Models (WAM).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">Jul 2025 – Aug 2025</div>
+        <div class="what">
+          <div class="role">Robotics Engineering Intern</div>
+          <div class="org">BYD Co., Ltd. · Robotics Division</div>
+          <ul>
+            <li>Explored the deployment of a stationary dual-arm gripper robot for autonomous tasks within an industrial assembly line.</li>
+            <li>Investigated Vision-Language-Action (VLA) models and their applications in complex industrial manipulation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== EDUCATION ============== -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="item">
+        <div class="when">2022 – 2027 (expected)</div>
+        <div class="what">
+          <div class="role">B.Eng. in Electronic Engineering</div>
+          <div class="org">Tsinghua University, Beijing, China · GPA 3.6 / 4.0</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== HONORS ============== -->
+    <section id="honors">
+      <h2>Honors &amp; Awards</h2>
+      <div class="item">
+        <div class="when">2025</div>
+        <div class="what"><div class="role">Tsinghua University Scholarship for Sports Excellence</div></div>
+      </div>
+      <div class="item">
+        <div class="when">2025</div>
+        <div class="what"><div class="role">Tsinghua University Scholarship for Social Practice Excellence</div></div>
+      </div>
+      <div class="item">
+        <div class="when">2024</div>
+        <div class="what"><div class="role">Tsinghua University Scholarship for Social Work Excellence</div></div>
+      </div>
+      <div class="item">
+        <div class="when">2024</div>
+        <div class="what"><div class="role">Changfeng Alumni Scholarship for Sports Excellence</div></div>
+      </div>
+    </section>
+
+    <!-- ============== SKILLS & LANGUAGES ============== -->
+    <section id="skills">
+      <h2>Skills &amp; Languages</h2>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Technical Skills</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">C / C++</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">ROS</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Languages</h3>
+          <ul>
+            <li>Mandarin Chinese — Native</li>
+            <li>English — Fluent (TOEFL iBT 102)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ACTIVITIES ============== -->
+    <section id="activities">
+      <h2>Leadership &amp; Activities</h2>
+
+      <div class="two-col">
+        <div class="panel">
+          <h3>Sports &amp; Athletics</h3>
+          <ul>
+            <li><strong>Tsinghua Men's Basketball Team (Tier 2)</strong>, Active Member, 2023 – Present.</li>
+            <li><strong>EE Department Basketball Team</strong>, Captain (2023–2024) — led the team to Top 4 in 5v5 University League and Champions in 3v3 (Division A).</li>
+            <li><strong>EE Department Football Team</strong>, Goalkeeper, 2025 – Present.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Social Practice &amp; Leadership</h3>
+          <ul>
+            <li><strong>Founder &amp; Team Leader</strong>, "Electronic Explore Euro-Sports" Program (2024 – 2026) — led research expeditions to France, the UK, and Spain studying European sports talent development.
+              <ul style="margin-top:.25rem;">
+                <li>University-level <em>Bronze Medal</em>, 2024 Summer Social Practice.</li>
+                <li><em>1st Place</em> in EE Department, 2026 Winter Social Practice.</li>
+              </ul>
+            </li>
+            <li><strong>Class President</strong> (2023–2024) and <strong>Class League Branch Secretary</strong> (2024–2025) for EE Class 23.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:1.25rem;">
+        <h3>Hobbies</h3>
+        <p style="margin:0; color:var(--text-soft); font-size:.92rem;">
+          Cinematography (admirer of Christopher Nolan and Michelangelo Antonioni) and Motorsport (Formula 1).
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Yu Guan · Built with HTML &amp; CSS · Last updated <span id="updated"></span></p>
+    </footer>
   </div>
 
-  <h2>News</h2>
-  <ul class="news-list">
-    <li><strong>[2026-05]</strong> One first-authored paper accepted to <em>ICML 2026</em>!</li>
-    <li><strong>[2026-02]</strong> One co-authored paper accepted to <em>CVPR 2026</em>!</li>
-    <li><strong>[2025-09]</strong> Joined Prof. Li Yi's group at Galbot and Tsinghua IIIS as an Undergraduate Research Assistant.</li>
-    <li><strong>[2025-07]</strong> Started my robotics engineering internship at BYD working on dual-arm workstation robots.</li>
-  </ul>
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = stored || (prefersDark ? 'dark' : 'light');
+      root.setAttribute('data-theme', initial);
+      btn.textContent = initial === 'dark' ? '☀' : '🌙';
 
-  <h2>Publications & Preprints</h2>
-  <div class="pub-list">
-    <div class="pub-item">
-      <div class="pub-title">LIMMT: Less is More for Motion Tracking</div>
-      <div class="pub-authors"><strong>Yu Guan</strong>, et al.</div>
-      <div class="pub-venue">Under Review (ICML 2026)</div>
-      <div>A novel approach emphasizing data quality over quantity in machine learning for motion tracking data.</div>
-    </div>
-    
-    <div class="pub-item">
-      <div class="pub-title">Humanoid-GPT: Humanoid Generative Pre-Training for Zero-Shot Motion Tracking</div>
-      <div class="pub-authors">Zekun Qi*, Xuchuan Chen*, Jilong Wang*, Chenghuai Lin*, Yunrui Lian, Zhikai Zhang, <strong>Yu Guan</strong>, Wenyao Zhang, Xinqiang Yu, He Wang, Li Yi</div>
-      <div class="pub-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026</div>
-      <div>A GPT-style Transformer trained on a billion-scale motion corpus for whole-body control.</div>
-    </div>
-  </div>
+      btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        btn.textContent = next === 'dark' ? '☀' : '🌙';
+      });
 
-  <h2>Projects & Extracurriculars</h2>
-  <ul>
-    <li><strong>Class League Branch Secretary:</strong> Serving as the Class League Branch Secretary (团支书) for EE Class 无23.</li>
-    <li><strong>Electronic Explore Euro Sport:</strong> Led research teams to France, the UK (Summer 2024), and Spain (Winter 2026) to study European sports talent systems.</li>
-    <li><strong>Athletics:</strong> Captain of the Electronic Engineering basketball team (2023-2024), current player, and goalkeeper for the soccer team.</li>
-    <li><strong>Hobbies:</strong> Cinematography (admirer of Christopher Nolan and Michelangelo Antonioni) and Motorsport (Formula 1).</li>
-  </ul>
-
-  <br>
-  <p style="text-align: center; color: #888; font-size: 0.9em;">
-    &copy; 2026 Yu Guan. Built with HTML/CSS.
-  </p>
-
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('updated').textContent = '2026-05';
+    })();
+  </script>
 </body>
 </html>
