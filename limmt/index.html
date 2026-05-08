@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="LIMMT: Less Is More for Motion Tracking - A data-centric framework for physics-based humanoid motion tracking.">
+  <meta name="keywords" content="Humanoid Robot, Motion Tracking, Data Curation, Less Is More, Physics-Based, Reinforcement Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIMMT: Less Is More for Motion Tracking</title>
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css"/>
+  <link rel="stylesheet" href="./static/css/own.min.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <!-- Scripts -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+  <script defer src="./static/js/index.min.js"></script>
+</head>
+<body>
+
+<!-- ==================== Hero ==================== -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h1 class="title is-1 publication-title" style="font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif; font-size: 52px; font-weight: 600; letter-spacing: -0.5px; line-height: 1.25;">
+            LIMMT: Less Is More
+            <br>
+            <span style="font-size: 44px;">for Motion Tracking</span>
+        </h1>
+
+        <div class="is-size-5 publication-authors" style="margin-top: 20px;">
+          <span class="author-block">
+            <a>Yu Guan<sup>1,2*</sup></a></span>,
+          <span class="author-block">
+            <a href="https://qizekun.github.io/">Zekun Qi<sup>1,2*</sup></a></span>,
+          <span class="author-block">
+            <a>Chenghuai Lin<sup>2</sup></a></span>,
+          <span class="author-block">
+            <a>Xuchuan Chen<sup>1,2</sup></a></span>,
+          <span class="author-block">
+            <a>Dairu Liu<sup>2</sup></a></span>,
+          <br>
+          <span class="author-block">
+            <a href="https://zhangwenyao1.github.io/">Wenyao Zhang<sup>2,3</sup></a></span>,
+          <span class="author-block">
+            <a>Jilong Wang<sup>2</sup></a></span>,
+          <span class="author-block">
+            <a>Xinqiang Yu<sup>2,4</sup></a></span>,
+          <span class="author-block">
+            <a href="https://hughw19.github.io/">He Wang<sup>2,4†</sup></a></span>,
+          <span class="author-block">
+            <a href="https://ericyi.github.io/">Li Yi<sup>1,5†</sup></a></span>
+        </div>
+
+        <div class="is-size-6 publication-authors" style="margin-top: 6px; color: #999;">
+          <span class="author-block">* equal contribution</span>&nbsp;&nbsp;
+          <span class="author-block">† corresponding author</span>
+        </div>
+        <div class="is-size-6 publication-authors" style="margin-top: 4px;">
+          <span class="author-block"><sup>1</sup>Tsinghua University</span>&nbsp;&nbsp;
+          <span class="author-block"><sup>2</sup>GalBot</span>&nbsp;&nbsp;
+          <span class="author-block"><sup>3</sup>Shanghai Jiao Tong University</span>&nbsp;&nbsp;
+          <span class="author-block"><sup>4</sup>Peking University</span>&nbsp;&nbsp;
+          <span class="author-block"><sup>5</sup>Shanghai Qi Zhi Institute</span>
+        </div>
+
+        <div class="column has-text-centered" style="margin-top: 8px;">
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="static/pdf/LIMMT.pdf"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="static/pdf/LIMMT.pdf"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-youtube"></i></span>
+                <span>Video</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Teaser ==================== -->
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered is-centered">
+          <div class="teaser-banner">
+            <div class="banner-stat">
+              <div class="stat-num">3%</div>
+              <div class="stat-label">Curated Data Beats<br>100% Full Dataset</div>
+            </div>
+            <div class="banner-divider"></div>
+            <div class="banner-stat">
+              <div class="stat-num">15%</div>
+              <div class="stat-label">MPJPE Improvement<br>Plug-and-Play</div>
+            </div>
+            <div class="banner-divider"></div>
+            <div class="banner-stat">
+              <div class="stat-num">3</div>
+              <div class="stat-label">Quality Dimensions:<br>Feasibility · Diversity · Complexity</div>
+            </div>
+          </div>
+        </div>
+        <p class="fig-caption has-text-centered" style="margin-top: 24px;">
+          A data-centric framework that curates motion data via <b>physics feasibility</b>, <b>action diversity</b>, and <b>action complexity</b> &mdash;
+          training on just <b>3% of AMASS</b> outperforms training on the full corpus.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .teaser-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 36px 28px;
+    width: 92%;
+    max-width: 1080px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(102,126,234,0.06) 0%, rgba(118,75,162,0.06) 100%);
+    border: 1px solid rgba(102,126,234,0.15);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(102,126,234,0.08);
+  }
+  .banner-stat { text-align: center; flex: 1; }
+  .stat-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 14px;
+    color: #4a5568;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .banner-divider {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, rgba(102,126,234,0.3), transparent);
+  }
+  @media screen and (max-width: 768px) {
+    .teaser-banner { flex-direction: column; gap: 18px; padding: 24px; }
+    .banner-divider { width: 80px; height: 1px; background: linear-gradient(90deg, transparent, rgba(102,126,234,0.3), transparent); }
+    .stat-num { font-size: 44px; }
+  }
+</style>
+
+<!-- ==================== Main Content ==================== -->
+<section class="section">
+
+  <!-- Abstract -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified" style="max-width: 960px; margin: 0 auto;">
+            <p>
+              We argue that <b style="color: #fe8e8e">high-quality motion data</b> can steer tracking policies toward better optimization trajectories early in training. In this work, we introduce <b style="color: #fe8e8e">LIMMT (Less Is More for Motion Tracking)</b>. To our knowledge, this is the <b>first data-centric study for physics-based humanoid motion tracking</b>. We go beyond simply removing low-quality and erroneous clips, but define motion data quality through three dimensions: <b>physics feasibility</b>, <b>diversity</b>, and <b>complexity</b>. We show that even training with under <b style="color: #fe8e8e">3% of AMASS</b> yields better tracking performance than training with the full dataset. We further conduct data cleaning on the estimated web-sourced mocap data. Extensive experiments and analyses validate the effectiveness of our framework.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Teaser Figure: Pipeline diagram from paper -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <div class="has-text-centered">
+        <img src="static/images/pipeline.png"
+             class="interpolation-image"
+             style="max-width: 100%; width: 100%;"
+             alt="GQS Pipeline Overview"/>
+        <p class="fig-caption" style="text-align: justify;">
+          <b>Figure 1. The proposed GQS pipeline.</b> The framework operationalizes motion quality through three stages:
+          filtering physically infeasible data, mapping motions to a semantic latent space, and selecting a subset via complexity-weighted sampling.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Highlights -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Highlights</h2>
+      <div style="max-width: 960px; margin: 0 auto;">
+        <div class="highlight-item">
+          <span class="highlight-num">1</span>
+          <span class="highlight-text">A <b style="color: #fe8e8e">data-centric perspective</b> redefining "quality" over "quantity": physics feasibility, action diversity, and action complexity &mdash; not dataset scale &mdash; are the decisive factors for robust humanoid tracking.</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-num">2</span>
+          <span class="highlight-text">We propose <b style="color: #fe8e8e">General Quality Selection (GQS)</b>, a hierarchical pipeline that first eliminates physically infeasible artifacts via simulator grounding, then maximizes behavioral coverage and dynamic richness using harmonic embeddings.</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-num">3</span>
+          <span class="highlight-text">A <b>Less-Is-More paradigm</b> for efficient learning: training on just <b style="color: #fe8e8e">3% of curated AMASS data</b> consistently outperforms training on the full corpus across all evaluated metrics.</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-num">4</span>
+          <span class="highlight-text">GQS gains transfer in a <b>plug-and-play manner</b> across diverse trackers (Any2Track, TWIST2) and datasets (AMASS, PHUMA), indicating that GQS improves the training signal rather than exploiting algorithmic idiosyncrasies.</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-num">5</span>
+          <span class="highlight-text">Extensive ablations isolate the contribution of each dimension, including a calibrated weighting of physical violations that distinguishes <b>toxic artifacts</b> from <b>valuable dynamic motions</b>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Method Overview -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Method Overview</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        <b>GQS</b> is a three-stage pipeline that transforms a large, noisy motion corpus into a compact, high-value training subset. The staged design encodes a key insight: <i>feasibility, diversity, and complexity must be addressed in the right order</i>. Filtering must come first; otherwise physically broken motions can dominate the representation space. Embedding learning must operate on feasible data to define a meaningful semantic manifold. Complexity weighting comes last; otherwise high-energy artifacts may be over-selected.
+      </p>
+
+      <div class="stage-grid">
+        <div class="stage-card">
+          <div class="stage-tag">Stage I</div>
+          <div class="stage-title">Physics-based<br>Feasibility Filtering</div>
+          <div class="stage-body">
+            Replay each candidate motion in a rigid-body simulator and compute a composite feasibility score <code>S<sub>phy</sub></code>. Severe failure modes (extended <b>floating</b>, <b>foot sliding</b>) are heavily penalized; rare or mild signals (self-collision, jerk) receive minimal weights. Motions with <code>S<sub>phy</sub> &lt; 90</code> are discarded.
+          </div>
+        </div>
+        <div class="stage-card">
+          <div class="stage-tag">Stage II</div>
+          <div class="stage-title">Semantic Motion<br>Embedding (HME)</div>
+          <div class="stage-body">
+            Embed motions using <b>Harmonic Motion Embedding</b> implemented as a Periodic Autoencoder, decomposing motion into Amplitude <code>A</code>, Frequency <code>F</code>, Phase <code>&phi;</code>, and Offset <code>b</code>. Global descriptor <code>z<sub>global</sub> = mean([A,F])</code> yields a phase-invariant manifold for diversity-aware sampling.
+          </div>
+        </div>
+        <div class="stage-card">
+          <div class="stage-tag">Stage III</div>
+          <div class="stage-title">Global Weighted<br>FPS Selection</div>
+          <div class="stage-body">
+            Perform <b>Global Weighted FPS</b> over the embedding space. The selection score
+            <code>&alpha; &middot; D&#770;(u,S) + (1&minus;&alpha;) &middot; C&#770;(u)</code>
+            primarily maximizes diversity while preferring dynamically richer motions (higher kinetic energy and acceleration) when candidates are comparable in distance.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Main Results Table -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Main Results on AMASS</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        Comparison of Success Rate, MPJPE, and MPKPE across different methods and data ratios on the AMASS benchmark. <b>GQS at 3% data outperforms the Full Data baseline across all metrics</b>, while Random 3% causes catastrophic performance collapse &mdash; demonstrating that the "less is more" effect is not about using less data per se, but about using the <b>right</b> data.
+      </p>
+      <div class="table-container" style="max-width: 920px; margin: 0 auto;">
+        <table class="table is-narrow is-fullwidth comparison-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Physics Filter</th>
+              <th>FPS Ratio</th>
+              <th>Success Rate &uarr;</th>
+              <th>MPJPE (rad) &darr;</th>
+              <th>MPKPE (mm) &darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Any2Track</td><td>&times;</td><td>&mdash;</td><td>0.942 &plusmn; 0.011</td><td>0.114 &plusmn; 0.003</td><td>39.24 &plusmn; 1.12</td></tr>
+            <tr><td>Any2Track + Random</td><td>&#10003;</td><td>Random 3%</td><td>0.838 &plusmn; 0.018</td><td>0.159 &plusmn; 0.005</td><td>158.76 &plusmn; 14.34</td></tr>
+            <tr><td>Any2Track + PHC</td><td>&#10003;</td><td>&mdash;</td><td>0.948 &plusmn; 0.009</td><td>0.111 &plusmn; 0.002</td><td>36.18 &plusmn; 0.98</td></tr>
+            <tr><td>Any2Track + GQS</td><td>&#10003;</td><td>100%</td><td>0.954 &plusmn; 0.011</td><td>0.112 &plusmn; 0.003</td><td>34.12 &plusmn; 0.95</td></tr>
+            <tr class="highlight-row"><td><b>Any2Track + GQS</b></td><td>&#10003;</td><td><b>10%</b></td><td><b>0.959 &plusmn; 0.010</b></td><td><b>0.107 &plusmn; 0.002</b></td><td>30.15 &plusmn; 0.81</td></tr>
+            <tr class="highlight-row"><td><b>Any2Track + GQS</b></td><td>&#10003;</td><td><b>3%</b></td><td>0.956 &plusmn; 0.012</td><td>0.108 &plusmn; 0.002</td><td><b>29.87 &plusmn; 0.76</b></td></tr>
+            <tr><td>TWIST2</td><td>&times;</td><td>&mdash;</td><td>0.825 &plusmn; 0.014</td><td>0.099 &plusmn; 0.003</td><td>35.80 &plusmn; 1.08</td></tr>
+            <tr><td>TWIST2 + Random</td><td>&#10003;</td><td>Random 3%</td><td>0.649 &plusmn; 0.021</td><td>0.177 &plusmn; 0.006</td><td>263.19 &plusmn; 27.87</td></tr>
+            <tr><td>TWIST2 + PHC</td><td>&#10003;</td><td>&mdash;</td><td>0.845 &plusmn; 0.012</td><td>0.096 &plusmn; 0.002</td><td>33.54 &plusmn; 0.94</td></tr>
+            <tr><td>TWIST2 + GQS</td><td>&#10003;</td><td>100%</td><td>0.843 &plusmn; 0.012</td><td>0.094 &plusmn; 0.003</td><td>31.25 &plusmn; 0.89</td></tr>
+            <tr class="highlight-row"><td><b>TWIST2 + GQS</b></td><td>&#10003;</td><td><b>10%</b></td><td><b>0.868 &plusmn; 0.011</b></td><td><b>0.084 &plusmn; 0.002</b></td><td>27.21 &plusmn; 0.72</td></tr>
+            <tr class="highlight-row"><td><b>TWIST2 + GQS</b></td><td>&#10003;</td><td><b>3%</b></td><td>0.861 &plusmn; 0.013</td><td>0.092 &plusmn; 0.002</td><td><b>27.09 &plusmn; 0.68</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Performance vs Data Ratio -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Performance vs. Data Ratio</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        We evaluate GQS across data ratios from <b>1% to 100%</b>. Remarkably, GQS Success Rate <b>crosses the full-data baseline at just 3% data</b>, while tracking error (MPJPE) drops below the baseline around 5%-10%. GQS significantly outperforms the Full Data baseline in both efficiency and quality.
+      </p>
+      <div class="has-text-centered">
+        <img src="static/images/main_results.png"
+             class="interpolation-image"
+             style="max-width: 92%; width: 92%;"
+             alt="Performance vs Data Ratio"/>
+        <p class="fig-caption">
+          <b>Figure 2. Performance vs. Data Ratio.</b> The red line shows GQS Success Rate crossing the baseline at just 3% data. The blue line shows that tracking error peaks around 5%-10%. GQS significantly outperforms the Full Data baseline in both efficiency and quality.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Component Ablation -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Component Ablation</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        Component ablation study at 3% data ratio. The full GQS framework achieves the best performance, demonstrating the synergistic benefit of all three components: <b>Physics filtering is critical</b> &mdash; removing it drops Success Rate from 95.6% to 91.1%; <b>Diversity is the primary prerequisite</b>; <b>Complexity weighting</b> further refines selection to prioritize informative motions.
+      </p>
+      <div class="table-container" style="max-width: 720px; margin: 0 auto;">
+        <table class="table is-narrow is-fullwidth comparison-table">
+          <thead>
+            <tr>
+              <th>Physics</th>
+              <th>Sparsity</th>
+              <th>Complexity</th>
+              <th>Success Rate &uarr;</th>
+              <th>MPJPE (rad) &darr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>&times;</td><td>&#10003;</td><td>&#10003;</td><td>0.911 &plusmn; 0.014</td><td>0.1213 &plusmn; 0.001</td></tr>
+            <tr><td>&#10003;</td><td>&times;</td><td>&#10003;</td><td>0.934 &plusmn; 0.009</td><td>0.1197 &plusmn; 0.003</td></tr>
+            <tr><td>&#10003;</td><td>&#10003;</td><td>&times;</td><td>0.946 &plusmn; 0.008</td><td>0.1079 &plusmn; 0.002</td></tr>
+            <tr class="highlight-row"><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td><b>0.956 &plusmn; 0.012</b></td><td><b>0.1079 &plusmn; 0.002</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Training Dynamics & Cross-domain -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Training Dynamics &amp; Cross-Domain Generalization</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        GQS-curated data achieves higher reward and lower tracking error <b>from the early stages of training</b> (before 0.5B steps), confirming that curated data provides cleaner gradients that steer the policy toward better solutions early. The advantage reflects a <b>fundamentally better optimization trajectory</b> rather than merely faster convergence. Cross-domain experiments on PHUMA further show that the 10% subset outperforms the full dataset when transferred zero-shot to AMASS (92.8% vs 91.0% SR).
+      </p>
+      <div class="has-text-centered" style="margin-bottom: 2rem;">
+        <img src="static/images/reward_curve.png"
+             class="interpolation-image"
+             style="max-width: 70%; width: 70%;"
+             alt="Training Dynamics"/>
+        <p class="fig-caption">
+          <b>Figure 3. Training Dynamics.</b> Learning curves comparing GQS 10% against Full Data. We achieve higher reward throughout training, not just at convergence, confirming that data curation improves the optimization trajectory from <b>early stages</b>.
+        </p>
+      </div>
+
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-6 has-text-centered">
+          <img src="static/images/phuma_in_domain_test_final.png"
+               class="interpolation-image"
+               style="max-width: 100%; width: 100%;"
+               alt="PHUMA In-Domain Efficiency"/>
+          <p class="fig-caption">
+            <b>(a) In-Domain Efficiency on PHUMA.</b> The 10% subset achieves lower MPJPE than the full dataset, surpassing the performance ceiling using only 30% of the data.
+          </p>
+        </div>
+        <div class="column is-6 has-text-centered">
+          <img src="static/images/phuma_cross_domain_amass_final.png"
+               class="interpolation-image"
+               style="max-width: 100%; width: 100%;"
+               alt="Cross-Domain Transfer to AMASS"/>
+          <p class="fig-caption">
+            <b>(b) Cross-Domain Transfer to AMASS.</b> The 10% subset significantly outperforms the full dataset when transferred zero-shot to AMASS (92.8% vs 91.0% SR).
+          </p>
+        </div>
+      </div>
+      <p class="fig-caption" style="text-align: center; margin-top: 8px;">
+        <b>Figure 4. Generalization Analysis on PHUMA.</b>
+      </p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Physical Score Analysis -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Physical Score Analysis</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        We sort all motions by physical scores in descending order and divide them into 10 percentile bins. The resulting curve reveals a <b>critical non-monotonic relationship</b>: performance peaks significantly at the <b>60-70% slice</b> (96.3% SR), where motions strike an optimal balance between physical feasibility and dynamic complexity. Surprisingly, the highest-scoring motions (0-10%) only reach 94.6% SR, suggesting that perfect physical scores often correspond to <i>conservative or static motions lacking dynamic richness</i>. This validates our three-stage design where Stage I functions as a binary filter while Stages II &amp; III identify high-value motions.
+      </p>
+      <div class="has-text-centered">
+        <img src="static/images/score_slicing_analysis.png"
+             class="interpolation-image"
+             style="max-width: 70%; width: 70%;"
+             alt="Physical Score Percentile Analysis"/>
+        <p class="fig-caption">
+          <b>Figure 5. Performance vs. Physical Score Percentile.</b> Performance drops at the tail but peaks at 60-70% rather than 0-10%, showing that the physical filter alone doesn&apos;t determine training value.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Weight Calibration Table -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Calibrated Physical Score Weights</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        Not all physical violations are equally detrimental to policy learning. We conduct a sensitivity analysis by filtering the dataset on each metric independently, then categorize metrics into three roles based on performance shift. <b style="color:#d65a5a">Toxic</b> artifacts (Floating, Foot Sliding) are penalized heavily as harmful noise; <b style="color:#5aa1d6">Friendly</b> patterns (high Velocity, Self-Collision) receive low weights since violent motions are valuable for learning robust dynamics; <b>Neutral</b> metrics (Penetration, Jerk) act as mild safety constraints.
+      </p>
+      <div class="has-text-centered" style="margin-bottom: 2rem;">
+        <img src="static/images/weight_calibration.jpg"
+             class="interpolation-image"
+             style="max-width: 75%; width: 75%;"
+             alt="Metric Sensitivity Analysis"/>
+        <p class="fig-caption">
+          <b>Figure 6. Metric Sensitivity Analysis.</b> Improvements indicate harmful artifacts that should be penalized heavily, while degradations indicate valuable dynamic motions that should be preserved.
+        </p>
+      </div>
+      <div class="table-container" style="max-width: 720px; margin: 0 auto;">
+        <table class="table is-narrow is-fullwidth comparison-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Impact</th>
+              <th>Role</th>
+              <th>Value</th>
+              <th>Weight (w<sub>i</sub>)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Floating</td><td>+2.6</td><td><span style="color:#d65a5a;font-weight:600">Toxic</span></td><td>0.4133</td><td>24.19</td></tr>
+            <tr><td>Foot Slide</td><td>+1.0</td><td><span style="color:#d65a5a;font-weight:600">Toxic</span></td><td>5.8716</td><td>1.70</td></tr>
+            <tr><td>Penetration</td><td>-0.2</td><td>Neutral</td><td>0.050</td><td>216.62</td></tr>
+            <tr><td>Jerk</td><td>-0.6</td><td>Neutral</td><td>3.6025</td><td>0.28</td></tr>
+            <tr><td>Velocity</td><td>-2.8</td><td><span style="color:#5aa1d6;font-weight:600">Friendly</span></td><td>0.0226</td><td>44.22</td></tr>
+            <tr><td>Self Collision</td><td>-3.0</td><td><span style="color:#5aa1d6;font-weight:600">Friendly</span></td><td>5.8343</td><td>0.17</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Global vs Cluster -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Global vs. Cluster-based Selection</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        A common heuristic in dataset curation is to first cluster the data, then sample within each cluster. We compare <b>Global Weighted FPS</b> (selection on the entire manifold) against <b>Cluster-based Selection</b> (K-Means into 20 groups, then sample proportionally). Global Selection consistently outperforms Cluster-based Selection, particularly in the critical low-data regime. We attribute this to the imbalanced nature of motion datasets: easy clusters like locomotion contain massive amounts of data while hard clusters like acrobatics are sparse. <b>Global WFPS acts as an automatic re-balancer</b>, naturally skipping over dense redundant centers and targeting sparse boundaries of the manifold.
+      </p>
+      <div class="has-text-centered">
+        <img src="static/images/cluster_vs_global.png"
+             class="interpolation-image"
+             style="max-width: 70%; width: 70%;"
+             alt="Global vs Cluster-based Selection"/>
+        <p class="fig-caption">
+          <b>Figure 7. Global vs. Cluster-based Selection.</b> Global selection outperforms cluster-based selection by naturally re-balancing the distribution rather than inheriting the original dataset's imbalance.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Real-world Deployment -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Real-World Deployment</h2>
+      <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
+        We deploy our tracker on the physical <b>Unitree G1</b> humanoid robot. The policy trained on only <b>10% GQS-curated data</b> achieves successful real-world deployment <b>without any fine-tuning</b>. The deployed policy demonstrates robust tracking across three motion categories: <b>(a)</b> Basic motion for daily and teleoperation, <b>(b)</b> dancing and expressive movements, <b>(c)</b> athletic skills and dynamic motions. This zero-shot transfer validates that our data curation strategy not only improves simulation metrics but also produces policies with better generalization to real-world conditions.
+      </p>
+      <div class="has-text-centered">
+        <img src="static/images/real.png"
+             class="interpolation-image"
+             style="max-width: 95%; width: 95%;"
+             alt="Real-World Motion Tracking on Unitree G1"/>
+        <p class="fig-caption" style="text-align: justify;">
+          <b>Figure 8. Real-World Motion Tracking.</b> We deploy the policy trained on GQS-curated data (10%) to the Unitree G1 robot. Each row shows a different motion category: (a) Basic motion for daily and teleoperation, (b) dancing and expressive movements, (c) athletic skills and dynamic motions. The policy successfully transfers to the real robot without fine-tuning, demonstrating that GQS-curated training data not only improves simulation performance but also enhances real-world deployment.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Conclusion -->
+  <div class="container is-fullhd">
+    <div class="my-block">
+      <h2 class="title is-3">Conclusion</h2>
+      <div class="content has-text-justified" style="max-width: 960px; margin: 0 auto;">
+        <p>
+          We present <b style="color:#fe8e8e">LIMMT</b>, a data-centric framework for humanoid motion tracking. Our three-stage <b>GQS</b> pipeline filters infeasible motions, embeds them in a semantic space, and selects a compact subset via complexity-weighted sampling. Training on just <b>3% of curated data outperforms full-corpus baselines</b>. The gains are plug-and-play across trackers and datasets. <b>Motion data is valuable when it is physically feasible, behaviorally diverse, and dynamically rich &mdash; not when it merely grows in volume.</b>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* Stage Cards */
+  .stage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .stage-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 26px 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid #edf2f7;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .stage-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(102,126,234,0.15);
+  }
+  .stage-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+  }
+  .stage-tag {
+    display: inline-block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #667eea;
+    background: rgba(102,126,234,0.08);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .stage-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #2d3748;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+  .stage-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #4a5568;
+    text-align: justify;
+  }
+  .stage-body code {
+    background: #f7fafc;
+    color: #764ba2;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  @media screen and (max-width: 900px) {
+    .stage-grid { grid-template-columns: 1fr; }
+  }
+
+</style>
+
+<!-- ==================== BibTeX ==================== -->
+<div class="bibtex-section" style="margin-top: 1rem;">
+  <div class="container is-max-widescreen content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{limmt2026,
+      title={LIMMT: Less Is More for Motion Tracking},
+      author={Guan, Yu and Qi, Zekun and Lin, Chenghuai and Chen, Xuchuan and Liu, Dairu and
+              Zhang, Wenyao and Wang, Jilong and Yu, Xinqiang and Wang, He and Yi, Li},
+      journal={arXiv preprint arXiv:2026.xxxxx},
+      year={2026}
+    }</code></pre>
+  </div>
+</div>
+
+<!-- ==================== Footer ==================== -->
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      Website template adapted from <a href="https://qizekun.github.io/humanoid-gpt/">Humanoid-GPT</a>,
+      <a href="https://qizekun.github.io/sofar/">SoFar</a>, and <a href="https://qizekun.github.io/shapellm/">ShapeLLM</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
