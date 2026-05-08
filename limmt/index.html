@@ -438,17 +438,89 @@
     <div class="my-block">
       <h2 class="title is-3">Real-World Deployment</h2>
       <p class="content has-text-justified" style="max-width: 960px; margin: 0 auto 24px;">
-        We deploy our tracker on the physical <b>Unitree G1</b> humanoid robot. The policy trained on only <b>10% GQS-curated data</b> achieves successful real-world deployment <b>without any fine-tuning</b>. The deployed policy demonstrates robust tracking across three motion categories: <b>(a)</b> Basic motion for daily and teleoperation, <b>(b)</b> dancing and expressive movements, <b>(c)</b> athletic skills and dynamic motions. This zero-shot transfer validates that our data curation strategy not only improves simulation metrics but also produces policies with better generalization to real-world conditions.
+        We deploy our tracker on the physical <b>Unitree G1</b> humanoid robot. The policy trained on only <b>10% GQS-curated data</b> achieves successful real-world deployment <b>without any fine-tuning</b>. The deployed policy demonstrates robust tracking across diverse motion categories &mdash; from expressive dance routines to athletic skills &mdash; validating that our data curation strategy not only improves simulation metrics but also produces policies with strong generalization to real-world conditions.
       </p>
-      <div class="has-text-centered">
-        <img src="static/images/real.png"
-             class="interpolation-image"
-             style="max-width: 95%; width: 95%;"
-             alt="Real-World Motion Tracking on Unitree G1"/>
-        <p class="fig-caption" style="text-align: justify;">
-          <b>Figure 8. Real-World Motion Tracking.</b> We deploy the policy trained on GQS-curated data (10%) to the Unitree G1 robot. Each row shows a different motion category: (a) Basic motion for daily and teleoperation, (b) dancing and expressive movements, (c) athletic skills and dynamic motions. The policy successfully transfers to the real robot without fine-tuning, demonstrating that GQS-curated training data not only improves simulation performance but also enhances real-world deployment.
-        </p>
+
+      <div class="container is-clipped">
+        <div id="slider-real" class="custom-slider2">
+          <div class="card-0">
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/candocango_1.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Dance: Can Do Can Go! (1)</div></div>
+            </div>
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/candocango_2.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Dance: Can Do Can Go! (2)</div></div>
+            </div>
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/jilejingtu_1.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Dance: Gokuraku Joudo (1)</div></div>
+            </div>
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/jilejingtu_2.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Dance: Gokuraku Joudo (2)</div></div>
+            </div>
+          </div>
+          <div class="card-0">
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/jilejingtu_3.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Dance: Gokuraku Joudo (3)</div></div>
+            </div>
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/oldtownroad_1.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Dance: Old Town Road</div></div>
+            </div>
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/huoyuanjia.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Athletic: Huo Yuan Jia / Fearless</div></div>
+            </div>
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/buqi.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Athletic: Bu Qi</div></div>
+            </div>
+          </div>
+          <div class="card-0">
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/yaobai_1.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Expressive: Yao Bai</div></div>
+            </div>
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/unknown1_1.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Whole-Body Tracking (1)</div></div>
+            </div>
+            <div class="card card-1">
+              <div class="card-image">
+                <video class="lazy" autoplay loop muted playsinline width="100%"><source data-src="./static/videos/unknown1_2.mp4" type="video/mp4"></video>
+              </div>
+              <div class="card-content"><div class="prompt">Whole-Body Tracking (2)</div></div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <p class="fig-caption" style="text-align: center; margin-top: 24px;">
+        Real-time deployment of GQS-curated 10% policy on the Unitree G1 humanoid &mdash; including Dance, Athletic, and Expressive motions.
+      </p>
     </div>
   </div>
 
