@@ -10,14 +10,16 @@
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Yu Guan (管羽) | Tsinghua EE">
   <meta property="og:description" content="Undergraduate researcher in humanoid motion tracking, VLA, and World Action Models at Tsinghua University.">
-  <meta property="og:url" content="https://giraffeguan.github.io/guanyu.github.io/">
+  <meta property="og:image" content="https://giraffeguan.github.io/assets/avatar.jpg">
+  <meta property="og:url" content="https://giraffeguan.github.io/">
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Yu Guan (管羽) | Tsinghua EE">
   <meta name="twitter:description" content="Undergraduate researcher in humanoid motion tracking, VLA, and World Action Models at Tsinghua University.">
+  <meta name="twitter:image" content="https://giraffeguan.github.io/assets/avatar.jpg">
 
-  <link rel="canonical" href="https://giraffeguan.github.io/guanyu.github.io/">
+  <link rel="canonical" href="https://giraffeguan.github.io/">
 
   <title>Yu Guan (管羽) | Tsinghua EE — Humanoid Robotics &amp; VLA</title>
 
@@ -29,8 +31,8 @@
     "@type": "Person",
     "name": "Yu Guan",
     "alternateName": ["管羽", "Guan Yu"],
-    "url": "https://giraffeguan.github.io/guanyu.github.io/",
-    "image": "https://giraffeguan.github.io/guanyu.github.io/",
+    "url": "https://giraffeguan.github.io/",
+    "image": "https://giraffeguan.github.io/assets/avatar.jpg",
     "jobTitle": "Undergraduate Research Assistant",
     "description": "Undergraduate researcher at Tsinghua University, focusing on humanoid motion tracking, Vision-Language-Action (VLA) models, and World Action Models.",
     "email": "mailto:rainguan467@gmail.com",
@@ -206,16 +208,11 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 4.5rem;
-      font-weight: 700;
-      letter-spacing: -.05em;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
       box-shadow: var(--shadow);
-      user-select: none;
+      border: 3px solid var(--border);
     }
 
     /* ==== Sections ==== */
@@ -413,7 +410,7 @@
         gap: 1.5rem;
         text-align: center;
       }
-      .avatar { width: 140px; height: 140px; font-size: 3rem; margin: 0 auto; order: -1; }
+      .avatar { width: 140px; height: 140px; margin: 0 auto; order: -1; }
       .links { justify-content: center; }
       .item { grid-template-columns: 1fr; gap: .35rem; }
       .item .when { font-size: .8rem; }
@@ -458,7 +455,7 @@
         </div>
       </div>
 
-      <div class="avatar" aria-label="Yu Guan avatar placeholder">YG</div>
+      <img class="avatar" src="assets/avatar.jpg" alt="Yu Guan (管羽)" width="200" height="200" loading="eager" decoding="async">
     </header>
 
     <!-- ============== NEWS ============== -->

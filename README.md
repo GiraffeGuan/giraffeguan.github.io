@@ -1,14 +1,10 @@
-# guanyu.github.io
+# giraffeguan.github.io
 
 Personal academic homepage of **Yu Guan (管羽)** — undergraduate at the Department of
 Electronic Engineering, Tsinghua University. Research interests: humanoid motion tracking,
 Vision-Language-Action (VLA) models, World Action Models, and General Reward Models.
 
-🔗 Live site: <https://giraffeguan.github.io/guanyu.github.io/>
-
-> ⚠ Note: the URL `https://guanyu.github.io/` does **not** point to this site
-> (the username `guanyu` is taken by another GitHub user). To shorten the URL,
-> see the "Custom domain" section below.
+🔗 Live site: <https://giraffeguan.github.io/>
 
 ---
 
@@ -30,6 +26,7 @@ Vision-Language-Action (VLA) models, World Action Models, and General Reward Mod
 ├── sitemap.xml             # for Google Search Console
 ├── README.md               # this file
 └── assets/
+    ├── avatar.jpg          # profile photo
     ├── Yu_Guan_CV.pdf      # English CV
     └── 管羽_CV.pdf          # Chinese CV
 ```
@@ -77,17 +74,14 @@ All text lives directly in `index.html`. To add a publication, copy an
 existing `<div class="pub">…</div>` block. To add a news item, prepend a
 new `<li>` inside the `#news` section.
 
-To replace the avatar placeholder (`YG` monogram), drop a square image at
-`assets/avatar.jpg` and replace the `<div class="avatar">YG</div>` block
-with `<img src="assets/avatar.jpg" alt="Yu Guan" class="avatar">`
-(remember to add `object-fit: cover;` to the style).
+Profile photo lives at `assets/avatar.jpg` (circular crop in CSS via `border-radius: 50%` and `object-fit: cover`). Replace that file to update the headshot.
 
 ## Getting indexed by Google
 
 After pushing changes:
 
 1. Visit <https://search.google.com/search-console>.
-2. Add the property `https://giraffeguan.github.io/guanyu.github.io/`
+2. Add the property `https://giraffeguan.github.io/`
    (or the custom domain when ready).
 3. Verify ownership via the HTML tag method (paste the `<meta>` into `index.html`).
 4. Submit the sitemap URL: `sitemap.xml`.
